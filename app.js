@@ -74,6 +74,6 @@ app.get("/contact", function (req, res) {
   res.render("contact", { contactContent: contactContent });
 });
 
-app.listen(uri || 3000, function () {
+app.listen(port || 3000, function () {
   console.log(`server running on port ${port}`);
 });
