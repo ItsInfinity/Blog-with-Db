@@ -14,13 +14,13 @@ const contactContent =
 
 const app = express();
 const port = process.env.PORT;
-
+const uri = process.env.MONGODB_URI;
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(port || "mongodb://localhost:27017/blogDB", { useNewUrlParser: true });
+mongoose.connect(uri || "mongodb://localhost:27017/blogDB", { useNewUrlParser: true });
 
 const postSchema = {
   title: String,
